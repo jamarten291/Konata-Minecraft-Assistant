@@ -1,5 +1,7 @@
 ## Konata Minecraft assistant with Mineflayer
 
-This is a Minecraft bot done with the Mineflayer library, it can help you recollecting blocks on your survival world
+Have you ever wanted to see Izumi Konata from Lucky Star helping you in your Minecraft world? Well, you're lucky because this project can make that idea become true!
 
-I will add more features soon
+This project is open to pull requests, feel free to test it on your LAN Minecraft worlds!
+
+I will add more features soon...
