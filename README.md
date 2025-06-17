@@ -31,5 +31,6 @@ This project is open to pull requests, feel free to test it on your LAN Minecraf
 - [ ] Create a "followme" command
 - [ ] Make the bot drop the stack of blocks to the player that ordered the block collection
 - [ ] Add customizable feature
+- [ ] Add an easier way to run the index.js file
 
 ---
