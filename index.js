@@ -43,6 +43,16 @@ bot.on('chat', (username, command) => {
       const blockType = commandArgs[2];
       var blockTypeWords = '';
 
+      if (blockType.toLowerCase() === "air") {
+        bot.chat('why do you want to collect air? you can breathe air, lol');
+        return;
+      }
+
+      if (blockType.toLowerCase() === "water") {
+        bot.chat('i don\'t know how to collect water, sorry!');
+        return;
+      }
+
       // Formats the text if it has spaces instead of underscores
       if (!blockType.includes('_')) {
         for (var i = 2; i < commandArgs.length; i++) {
