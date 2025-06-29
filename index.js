@@ -57,7 +57,7 @@ bot.on('chat', (username, command) => {
       if (!blockType.includes('_')) {
         for (var i = 2; i < commandArgs.length; i++) {
           // Adds underscores until it gets to the last element
-          blockTypeWords += commandArgs[i] += (i < commandArgs.length-1 ? '_' : '');
+          blockTypeWords += commandArgs[i] += (i < commandArgs.length - 1 ? '_' : '');
         }
       }
 
@@ -72,6 +72,12 @@ bot.on('chat', (username, command) => {
       bot.chat(`${username} TOLD ME TO COLLECT ${formattedBlockType.toUpperCase()} YAYY!!! >u<`);
       recolecting = true;
       startRecolecting(blockTypeToSearch);
+      break;
+    case 'here':
+      bot.chat(`i\'m approaching ${username}!!!`);
+      goTowardsPlayer(username);
+      bot.chat(`i reached ${username}!!!`);
+      // TODO: Create 'here' command
       break;
     case 'stop':
       if (recolecting) {
@@ -116,4 +122,8 @@ async function startRecolecting(blockType) {
     bot.chat("i received brain damage... x_x");
     console.log(e);
   }
+}
+
+async function goTowardsPlayer(player) {
+  return;
 }
