@@ -125,5 +125,6 @@ async function startRecolecting(blockType) {
 }
 
 async function goTowardsPlayer(player) {
+  // TODO: Program method that makes SillyBot follow the player
   return;
 }
