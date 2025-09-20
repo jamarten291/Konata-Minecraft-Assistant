@@ -5,9 +5,9 @@ const collectBlock = require('mineflayer-collectblock').plugin;
 const bot = mineflayer.createBot({
   host: 'localhost', // minecraft server ip
   username: 'SillyBot', // username to join as if auth is `offline`, else a unique identifier for this account. Switch if you want to change accounts
-  // auth: 'offline', // for offline mode servers, you can set this to 'offline'
-  // port: 12345, // Use the port of your LAN world
-  // version: '1.21' // Specify your version here
+  auth: 'offline', // for offline mode servers, you can set this to 'offline'
+  port: 12345, // Use the port of your LAN world
+  version: '1.21' // Specify your version here
   // password: '12345678'      // set if you want to use password-based auth (may be unreliable). If specified, the `username` must be an email
 });
 
