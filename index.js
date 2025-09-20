@@ -31,12 +31,12 @@ bot.on('chat', (username, command) => {
     case 'collect':
       // First discard all invalid commands
       if (recolecting) {
-        bot.chat('wait until i finish collecting plz! (or use the stop command to make it stop recollecting)');
+        bot.chat('Wait until i finish recollecting! (or use the stop command to make it stop recollecting)');
         return;
       }
 
       if (commandArgs.length <= 2) {
-        bot.chat('what kind of block do you want me to collect?');
+        bot.chat('What kind of block do you want me to collect?');
         return;
       }
 
@@ -44,12 +44,12 @@ bot.on('chat', (username, command) => {
       var blockTypeWords = '';
 
       if (blockType.toLowerCase() === "air") {
-        bot.chat('why do you want to collect air? you can breathe air, lol');
+        bot.chat('I can\'t collect air my friend, that\'s impossible');
         return;
       }
 
       if (blockType.toLowerCase() === "water") {
-        bot.chat('i don\'t know how to collect water, sorry!');
+        bot.chat('I\'m not able to collect water, try with other block');
         return;
       }
 
@@ -65,31 +65,31 @@ bot.on('chat', (username, command) => {
       const formattedBlockType = blockTypeToSearch.replaceAll('_', ' ');
 
       if (bot.registry.blocksByName[blockTypeToSearch] === undefined) {
-        bot.chat('huh? idk that object bro...');
+        bot.chat('That block is not on the list, my friend!');
         return;
       }
 
-      bot.chat(`${username} TOLD ME TO COLLECT ${formattedBlockType.toUpperCase()} YAYY!!! :D`);
+      bot.chat(`Beep-beep, following the order to collect ${formattedBlockType.toUpperCase()} made by ${username}...`);
       recolecting = true;
       startRecolecting(blockTypeToSearch);
       break;
     case 'here':
-      bot.chat(`i\'m approaching ${username}!!!`);
+      bot.chat(`Approaching ${username} stealthily...`);
       goTowardsPlayer(username);
-      bot.chat(`i reached ${username}!!!`);
+      bot.chat(`I reached you, ${username}!`);
       // TODO: Create 'here' command
       break;
     case 'stop':
       if (recolecting) {
         recolecting = false;
-        bot.chat(`${username} told me to stop collecting blocks!`);
+        bot.chat(`${username} ordered to stop collecting blocks!`);
       } else {
-        bot.chat('i already stopped collecting blocks')
+        bot.chat('I already stopped collecting blocks');
       }
       break;
     default:
       // Random funny feature i added
-      bot.chat(`is it me or did i hear ${username} mentioning me???...`);
+      bot.chat(`Beep-beep, waiting for an order to be received...`);
   }
 })
 
@@ -112,14 +112,14 @@ async function startRecolecting(blockType) {
         await bot.collectBlock.collect(block);
         await new Promise(resolve => setTimeout(resolve, 500));
       } else {
-        bot.chat('wait... i can\'t find that block nearby');
+        bot.chat('Could not find that block nearby');
         recolecting = false;
       }
     }
   }
   catch (e) {
     // TODO: Fix npm memory error that happens ocasionally
-    bot.chat("i received brain damage... x_x");
+    bot.chat("SillyBot has stopped working");
     console.log(e);
   }
 }
