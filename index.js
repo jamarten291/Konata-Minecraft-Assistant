@@ -69,7 +69,7 @@ bot.on('chat', (username, command) => {
         return;
       }
 
-      bot.chat(`Beep-beep, following the order to collect ${formattedBlockType.toUpperCase()} made by ${username}...`);
+      bot.chat(`Beep-beep, following the order to collect ${formattedBlockType} made by ${username}...`);
       recolecting = true;
       startRecolecting(blockTypeToSearch);
       break;
@@ -89,7 +89,7 @@ bot.on('chat', (username, command) => {
       break;
     default:
       // Random funny feature i added
-      bot.chat(`Beep-beep, waiting for an order to be received...`);
+      bot.chat(`Beep-beep, waiting for instructions to be received...`);
   }
 })
 
