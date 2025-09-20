@@ -4,7 +4,7 @@ const collectBlock = require('mineflayer-collectblock').plugin;
 
 const bot = mineflayer.createBot({
   host: 'localhost', // minecraft server ip
-  username: 'Konata', // username to join as if auth is `offline`, else a unique identifier for this account. Switch if you want to change accounts
+  username: 'SillyBot', // username to join as if auth is `offline`, else a unique identifier for this account. Switch if you want to change accounts
   // auth: 'offline', // for offline mode servers, you can set this to 'offline'
   // port: 12345, // Use the port of your LAN world
   // version: '1.21' // Specify your version here
@@ -17,26 +17,26 @@ bot.loadPlugin(pathfinder);
 bot.loadPlugin(collectBlock);
 
 bot.on('spawn', () => {
-  bot.chat("/skin set web slim \"https://www.minecraftskins.com/uploads/skins/2025/03/09/konata-izumi-lucky-star-23108654.png?v847\"");
-  // Link to the original skin: https://www.minecraftskins.com/skin/23108654/konata-izumi-lucky-star/
+  // TODO: Program spawn behavior
 })
 
 bot.on('chat', (username, command) => {
+  // Checks if the message was sent by the bot itself
   if (username === bot.username) return;
 
   const commandArgs = command.toString().split(' ');
-  if (commandArgs[0] !== 'konata' || commandArgs.length <= 1) return;
+  if (commandArgs[0] !== 'sillybot' || commandArgs.length <= 1) return;
 
   switch (commandArgs[1]) {
     case 'collect':
       // First discard all invalid commands
       if (recolecting) {
-        bot.chat('wait until i finish collecting plz! (or use the stop command to make her stop recollecting)');
+        bot.chat('wait until i finish collecting plz! (or use the stop command to make it stop recollecting)');
         return;
       }
 
       if (commandArgs.length <= 2) {
-        bot.chat('what kind of block do u want me to collect? :D');
+        bot.chat('what kind of block do you want me to collect?');
         return;
       }
 
@@ -69,7 +69,7 @@ bot.on('chat', (username, command) => {
         return;
       }
 
-      bot.chat(`${username} TOLD ME TO COLLECT ${formattedBlockType.toUpperCase()} YAYY!!! >u<`);
+      bot.chat(`${username} TOLD ME TO COLLECT ${formattedBlockType.toUpperCase()} YAYY!!! :D`);
       recolecting = true;
       startRecolecting(blockTypeToSearch);
       break;
@@ -82,7 +82,7 @@ bot.on('chat', (username, command) => {
     case 'stop':
       if (recolecting) {
         recolecting = false;
-        bot.chat(`${username} told me to stop collecting blocks! -w-`);
+        bot.chat(`${username} told me to stop collecting blocks!`);
       } else {
         bot.chat('i already stopped collecting blocks')
       }
