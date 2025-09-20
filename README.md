@@ -20,8 +20,8 @@ This project is open to pull requests, feel free to test it on your LAN Minecraf
 
 ## 💻 Commands
 
-- `konata collect sample_block:` The bot will start recolecting the block in the third parameter (in this case, it will try to recollect "sample_block" but it could be dirt or oak logs for example)
-- `konata stop:` The bot will stop recollecting
+- `sillybot collect sample_block:` The bot will start recolecting the block in the third parameter (in this case, it will try to recollect "sample_block" but it could be dirt or oak logs for example)
+- `sillybot stop:` The bot will stop recollecting
 
 ## ✅ To-Do List
 
