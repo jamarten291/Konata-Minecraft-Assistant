@@ -1,8 +1,6 @@
-## Konata Minecraft assistant with Mineflayer
+## SillyBot Minecraft assistant with Mineflayer
 
-Have you ever wanted to see Izumi Konata from Lucky Star helping you in your Minecraft world? Well, you're 'lucky' because this project can make that idea become true!
-
-It all started as a joke, but soon i will make this bot completely customizable (custom skins, custom name, custom behaviour, etc.)
+Have you ever wanted a bot that could help you with your daily Minecraft tasks? Well, you're lucky!
 
 This project is open to pull requests, feel free to test it on your LAN Minecraft worlds!
 
